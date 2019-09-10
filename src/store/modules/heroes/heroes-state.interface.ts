@@ -1,9 +1,5 @@
+import {HeroesInterface} from '@/shared/interfaces/heroes.interface';
+
 export interface HeroesStateInterface {
-    list: Array<{
-        name: string;
-        alias: string;
-        gender: string;
-        species: string;
-        universe: string;
-    }>;
+    list: HeroesInterface[];
 }
