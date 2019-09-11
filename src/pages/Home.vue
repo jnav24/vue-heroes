@@ -1,7 +1,11 @@
 <template>
 	<div id="home">
 		<Search></Search>
-		<ListTable></ListTable>
+		<v-layout justify-center style="padding-top: 2rem;">
+			<v-flex lg8 xl8>
+				<ListTable></ListTable>
+			</v-flex>
+		</v-layout>
 	</div>
 </template>
 
