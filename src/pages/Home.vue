@@ -1,11 +1,7 @@
 <template>
 	<div id="home">
-		<v-layout justify-center>
-			<v-flex lg8 xl8>
-				<Search></Search>
-				<ListTable></ListTable>
-			</v-flex>
-		</v-layout>
+		<Search></Search>
+		<ListTable></ListTable>
 	</div>
 </template>
 
