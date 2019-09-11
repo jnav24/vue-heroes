@@ -1,17 +1,31 @@
 import {ActionTree} from 'vuex';
 import {HeroesStateInterface} from '@/store/modules/heroes/heroes-state.interface';
 import {RootStateInterface} from '@/store/root-state.interface';
-import { heroesList } from '@/models/heroes';
+import {getHeroes} from '@/shared/services/heroes.service';
 
 const HeroesActions: ActionTree<HeroesStateInterface, RootStateInterface> = {
     async getHeroes({ commit }): Promise<{ status: number; data: any[] | {} }> {
-        return new Promise((resolve) => {
-            commit('ADD_HEROES', heroesList);
-            resolve({
-                status: 200,
+        try {
+            const response: { status: number; data: any } = await getHeroes();
+
+            if (response.status === 200) {
+                commit('ADD_HEROES', response.data.data);
+                return {
+                    status: 200,
+                    data: {},
+                };
+            }
+
+            return {
+                status: 400,
                 data: {},
-            });
-        });
+            };
+        } catch (error) {
+            return {
+                status: 400,
+                data: {},
+            };
+        }
     },
 };
 
