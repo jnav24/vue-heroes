@@ -4,4 +4,6 @@ export interface HeroesInterface {
     gender: string;
     species: string;
     universe: string;
+    image: string;
+    description: string;
 }
