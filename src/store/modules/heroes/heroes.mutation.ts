@@ -6,6 +6,27 @@ const HeroesMutations: MutationTree<HeroesStateInterface> = {
     ADD_HEROES(state, payload: HeroesInterface[]) {
         state.list = payload;
     },
+    RESET_HEROES(state) {
+        state.list = [];
+    },
+    SET_FILTER_GENDER(state, payload: string) {
+        state.filter = {
+            ...state.filter,
+            gender: payload,
+        };
+    },
+    SET_FILTER_NAME(state, payload: string) {
+        state.filter = {
+            ...state.filter,
+            name: payload,
+        };
+    },
+    SET_FILTER_UNIVERSE(state, payload: string) {
+        state.filter = {
+            ...state.filter,
+            universe: payload,
+        };
+    },
 };
 
 export default HeroesMutations;
