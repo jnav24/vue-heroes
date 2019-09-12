@@ -61,16 +61,22 @@ describe('ListTable Component', () => {
         });
     });
 
+    afterEach(() => {
+        store.commit('Heroes/RESET_HEROES');
+    });
+
     it('renders without errors', () => {
         expect(wrapper.isVueInstance()).toBeTruthy();
     });
 
     it('should have one hero in the getter', async () => {
+        expect(wrapper.vm.heroesList.length).toEqual(0);
         await store.dispatch('Heroes/getHeroes');
-        expect(wrapper.vm.heroesList.length).toEqual(1);
+        expect(wrapper.vm.heroesList.length).toEqual(heroData.length);
     });
 
     it('should have the same name in heroes', async () => {
+        expect(wrapper.vm.heroesList[0]).toBeUndefined();
         await store.dispatch('Heroes/getHeroes');
         expect(wrapper.vm.heroesList[0].name).toEqual(heroData[0].name);
     });

@@ -15,7 +15,7 @@ describe('App.vue', () => {
         wrapper = shallowMount(App, {});
     });
 
-    it('renders props.msg when passed', () => {
+    it('renders without errors', () => {
         expect(wrapper.isVueInstance()).toBeTruthy();
     });
 });
