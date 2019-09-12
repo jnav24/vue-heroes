@@ -11,6 +11,12 @@
 					show-expand
 					item-key="name"
 					:items="heroesList">
+					<template v-slot:top>
+						<v-toolbar flat color="white">
+							<v-toolbar-title>The Greatest Heroes</v-toolbar-title>
+						</v-toolbar>
+					</template>
+
 					<template v-slot:expanded-item="{ heroHeaders, item }">
 						<td :colspan="headersLength + 1">
 							<v-layout class="expanded-container">
