@@ -62,7 +62,7 @@ describe('ListTable Component', () => {
     });
 
     afterEach(() => {
-        store.commit('Heroes/RESET_HEROES');
+        store.commit('Heroes/ADD_HEROES', []);
     });
 
     it('renders without errors', () => {

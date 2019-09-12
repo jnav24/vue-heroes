@@ -6,9 +6,6 @@ const HeroesMutations: MutationTree<HeroesStateInterface> = {
     ADD_HEROES(state, payload: HeroesInterface[]) {
         state.list = payload;
     },
-    RESET_HEROES(state) {
-        state.list = [];
-    },
     SET_FILTER_GENDER(state, payload: string) {
         state.filter = {
             ...state.filter,

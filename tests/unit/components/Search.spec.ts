@@ -80,7 +80,7 @@ describe('Search.vue', () => {
     });
 
     afterEach(() => {
-        store.commit('Heroes/RESET_HEROES');
+        store.commit('Heroes/ADD_HEROES', []);
         store.commit('Heroes/SET_FILTER_GENDER', '');
         store.commit('Heroes/SET_FILTER_NAME', '');
         store.commit('Heroes/SET_FILTER_UNIVERSE', '');
