@@ -2,7 +2,7 @@
 	<div id="home">
 		<Search></Search>
 		<v-layout justify-center style="padding-top: 2rem;">
-			<v-flex lg8 xl8>
+			<v-flex lg6 xl6>
 				<ListTable></ListTable>
 			</v-flex>
 		</v-layout>

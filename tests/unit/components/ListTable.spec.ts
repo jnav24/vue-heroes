@@ -20,7 +20,7 @@ const heroData = [
         universe: 'testing universe',
         gender: 'neither',
         species: 'jest',
-    }
+    },
 ];
 
 jest.mock('@/shared/services/heroes.service', () => ({

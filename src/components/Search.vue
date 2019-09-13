@@ -1,7 +1,7 @@
 <template>
 	<div id="search">
 		<v-layout class="search-container" justify-center>
-			<v-flex lg8 xl8>
+			<v-flex lg6 xl6>
 				<v-layout justify-space-between>
 					<v-flex lg3 xl3>
 						<v-text-field
