@@ -17,5 +17,14 @@ export default new Router({
             name: 'home',
             path: '/',
         },
+        {
+            beforeEnter: (to: Route, from: Route, next: any) => {
+                store.dispatch('Heroes/getHeroes');
+                next();
+            },
+            component: () => import(/* webpackChunkName: "heroes" */ '@/pages/Heroes.vue'),
+            name: 'heroes',
+            path: '/heroes',
+        },
     ],
 });
