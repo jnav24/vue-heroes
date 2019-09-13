@@ -9,13 +9,10 @@ export default new Router({
     base: process.env.BASE_URL,
     routes: [
         {
-            beforeEnter: (to: Route, from: Route, next: any) => {
-                store.dispatch('Heroes/getHeroes');
-                next();
-            },
-            component: () => import(/* webpackChunkName: "home" */ '@/pages/Home.vue'),
-            name: 'home',
             path: '/',
+            redirect: {
+                name: 'heroes',
+            },
         },
         {
             beforeEnter: (to: Route, from: Route, next: any) => {
@@ -25,6 +22,21 @@ export default new Router({
             component: () => import(/* webpackChunkName: "heroes" */ '@/pages/Heroes.vue'),
             name: 'heroes',
             path: '/heroes',
+        },
+        {
+            beforeEnter: (to: Route, from: Route, next: any) => {
+                store.dispatch('Heroes/getHeroes');
+                next();
+            },
+            component: () => import(/* webpackChunkName: "heroes" */ '@/pages/Hero.vue'),
+            name: 'hero',
+            path: '/hero/:name',
+        },
+        {
+            path: '*',
+            redirect: {
+                name: 'heroes',
+            },
         },
     ],
 });
