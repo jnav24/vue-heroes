@@ -1,0 +1,12 @@
+version: '3'
+
+services:
+  node:
+    build: .
+    container_name: vue_heroes
+    image: node:10-jessie
+    ports:
+      - '9091:8081'
+    command: npm run serve
+    volumes:
+      - .:/app
