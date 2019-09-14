@@ -7,14 +7,16 @@ import HeroesActions from '@/store/modules/heroes/heroes.action';
 import Vuex from 'vuex';
 import HeroesMutations from '@/store/modules/heroes/heroes.mutation';
 import HeroesGetters from '@/store/modules/heroes/heroes.getter';
+import {HeroesInterface} from '@/shared/interfaces/heroes.interface';
 
 const localVue = createLocalVue();
 localVue.use(Vuex);
 
-const heroData = [
+const heroData: HeroesInterface[] = [
     {
         name: 'Jasmine',
         alias: 'Jasmine Test',
+        slug: 'jasmine',
         image: '',
         description: 'This is from a test.',
         universe: 'Angular testing universe',
@@ -23,6 +25,7 @@ const heroData = [
     },
     {
         name: 'Jest',
+        slug: 'jest',
         alias: 'Jest Test',
         image: '',
         description: 'This is from a test.',
@@ -32,6 +35,7 @@ const heroData = [
     },
     {
         name: 'Mocha',
+        slug: 'mocha',
         alias: 'Mocha Test',
         image: '',
         description: 'This is from a test.',
