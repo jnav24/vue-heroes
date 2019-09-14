@@ -56,6 +56,19 @@
 				'universeList',
 			]),
 		},
+		created() {
+			const storedFilter = localStorage.getItem('hero_filter');
+
+			if (!!storedFilter) {
+				const { name, gender, universe } = JSON.parse(storedFilter);
+				this.form = {
+					name,
+					gender,
+					universe,
+				};
+				this.submitFilter();
+			}
+		},
 		data: () => {
 			return {
 				form: {
@@ -91,6 +104,7 @@
 				this.SET_FILTER_GENDER(this.form.gender);
 				this.SET_FILTER_NAME(this.form.name);
 				this.SET_FILTER_UNIVERSE(this.form.universe);
+				localStorage.setItem('hero_filter', JSON.stringify(this.form));
 			},
 		},
 	});
