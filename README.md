@@ -1,4 +1,11 @@
-# vue-challenge
+# Vue Heroes
+
+Docker is also set up for this. Run the following:
+
+```
+docker-compose build
+docker-compose up
+```
 
 ## Project setup
 ```
