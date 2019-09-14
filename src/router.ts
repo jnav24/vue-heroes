@@ -2,7 +2,9 @@ import Vue from 'vue';
 import store from '@/store/index';
 import Router, {Route} from 'vue-router';
 
-Vue.use(Router);
+if (!process || process.env.NODE_ENV !== 'test') {
+    Vue.use(Router);
+}
 
 export default new Router({
     mode: 'history',
