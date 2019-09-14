@@ -1,7 +1,6 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
 import vuetify from 'vuetify';
-import Router from 'vue-router';
 import {createLocalVue, shallowMount} from '@vue/test-utils';
 import HeroesState from '@/store/modules/heroes/heroes.state';
 import HeroesActions from '@/store/modules/heroes/heroes.action';
@@ -47,7 +46,7 @@ describe('Heroes Component', () => {
 
     beforeEach(() => {
         Vue.use(vuetify);
-        Vue.use(Router);
+
         store = new Vuex.Store({
             modules: {
                 Heroes: {
@@ -62,6 +61,9 @@ describe('Heroes Component', () => {
         wrapper = shallowMount(Heroes, {
             localVue,
             store,
+            stubs: [
+                'router-link',
+            ],
         });
     });
 
